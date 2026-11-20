@@ -1,0 +1,78 @@
+.container{
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    grid-template-columns: 2fr;
+}
+.picture{
+    position: absolute;
+    inset: 0;
+    display: block;
+    
+    clip-path: inset(0 0 0 100%);
+    z-index: 1;
+
+    will-change: clip-path;
+}
+
+@keyframes left{
+    0%{
+        clip-path: inset(0 100% 0 0);
+    }
+    100%{
+        clip-path: inset(0 0 0 0%);
+    }
+}
+@keyframes right{
+    0%{
+        clip-path: inset(0 0 0 100%);
+    }
+    100%{
+        clip-path: inset(0 0 0 0%);
+    }
+}
+.picture.active.mount{
+    z-index: 2 ;
+    clip-path: inset(0 0 0 0%);
+}
+.picture.active.left{
+    z-index: 2 ;
+    animation: left var(--duration) cubic-bezier(0.4, 0.1, 0.4, 1.0) forwards;
+}
+.picture.active.right{
+    z-index: 2 ;
+    animation: right var(--duration) cubic-bezier(0.4, 0.1, 0.4, 1.0) forwards;
+}
+.wait{
+    clip-path: inset(0 0 0 0%);
+}
+
+.picture img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.button{
+    position: relative;
+    z-index: 3;
+    width: 50px;
+    aspect-ratio: 1;
+    border: solid 1px grey;
+    background: none;
+
+    align-self: center;
+    cursor: pointer;
+}
+.button:nth-of-type(1){
+    grid-row: 1;
+    margin-left: 25px;
+}
+.button:nth-of-type(2){
+    grid-row: 1;
+    margin-right: 25px;
+}
+.lock{
+    cursor: default;
+}
