@@ -21,8 +21,9 @@ export function HeroSlider({pictures}:Props){
         const RO = new ResizeObserver((entries)=>{
             if(!entries[0])return
             
-            const scaleValue = entries[0].borderBoxSize[0].inlineSize * 0.0005
-            const duration = 1.5 + scaleValue
+            const scaleValue = entries[0].borderBoxSize[0].inlineSize * 0.0003
+            console.log(scaleValue)
+            const duration = 1.3 + scaleValue
             document.documentElement.style.setProperty('--duration',`${duration}s`)
         })
         RO.observe(container.current)
