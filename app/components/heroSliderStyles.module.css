@@ -38,11 +38,11 @@
 }
 .picture.active.left{
     z-index: 2 ;
-    animation: left var(--duration) cubic-bezier(0.4, 0.1, 0.4, 1.0) forwards;
+    animation: left var(--duration) cubic-bezier(0.4, 0.15, 0.45, 1.0) forwards;
 }
 .picture.active.right{
     z-index: 2 ;
-    animation: right var(--duration) cubic-bezier(0.4, 0.1, 0.4, 1.0) forwards;
+    animation: right var(--duration) cubic-bezier(0.4, 0.15, 0.45, 1.0) forwards;
 }
 .wait{
     clip-path: inset(0 0 0 0%);
